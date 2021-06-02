@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            by <a href="https://sohankale.cf">skohan</a>
+        </div>
+        <h1>Conway's Game of Life</h1>
+
+
+
+        <div class="controller">
+            <!-- <div class="input">
+                Speed:
+                <input type="number">
+                secs
+            </div> -->
+            <div class="controlls">
+                <a href="/rules.html">Rules</a> of the game.
+
+                <button v-on:click="start()">Start</button>
+                <button v-on:click="stop()">Stop</button>
+                <button v-on:click="clear()">Clear</button>
+                <div v-if="started">Please hit stop before adding new alive cells</div>
+                <div v-else>Click on cells to make them alive and hit start</div>
+            </div>
+        </div>
+
+        <br>
+
+        <div v-for="(a, i) in arr" class="row">
+            <div v-for="(is_active, j) in a" class="col">
+                <div v-on:click="toggle(i,j)" class="cell">
+                    <div v-if="is_active" class="active"></div>
+                    <div v-else></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Developement -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- Production -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
