@@ -25,7 +25,7 @@ var app = new Vue({
         },
 
         clear: function () {
-            // console.log("hello")
+            
             for (var i = 0; i < this.n; i++) {
                 for (var j = 0; j < this.n; j++)
                 {
@@ -50,9 +50,6 @@ var app = new Vue({
             clearInterval(this.interval_val);
 
             this.interval_val = setInterval(() => {
-                // if(!this.start)
-                //     clearInterval();
-                console.log("here");
 
                 this.update();
 
